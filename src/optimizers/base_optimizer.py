@@ -15,8 +15,8 @@ class BaseOptimizer(ABC):
     self.lr = lr
     self.name = self.__class__.__name__
 
-    @abstractmethod
-    def step(self, params: np.ndarray, gradients: np.ndarray) -> np.ndarray:
+  @abstractmethod
+  def step(self, params: np.ndarray, gradients: np.ndarray) -> np.ndarray:
       """
       Performs a single optimization step.
 
