@@ -8,6 +8,8 @@ from .base_function import BaseFunction
 
 class Quadratic(BaseFunction):
   """
+  A simple quadratic function:
+  f(x,y) = a*x^2 + b*y^2:
   """
 
   def __init__(self, a: float = 1.0, b: float = 10.0):
