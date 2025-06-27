@@ -9,7 +9,7 @@ def main():
     """
     Main function to run the basic comparison experiment.
     """
-    # --- Experiment Configuration ---
+    # Experiment Configuration
     # Choose loss function: Rosenbrock() or Quadratic()
     loss_function = Quadratic()
 
@@ -24,7 +24,7 @@ def main():
         "Adam (lr=0.02)":    {"class": Adam, "params": {"lr": 0.02}},
     }
 
-    # --- Run Experiments ---
+    # Run Experiments
     histories = {}
     for name, config in optimizer_configs.items():
         # Create a new optimizer instance for each run to ensure no state is shared
@@ -38,7 +38,7 @@ def main():
         )
         histories[name] = history
 
-    # --- Visualize Results ---
+    #  Visualize Results
     plot_title = f"Optimizer Comparison on {loss_function.name}"
 
     # Define plot ranges based on the function
@@ -61,5 +61,4 @@ def main():
     )
 
 if __name__ == "__main__":
-    # This allows the script to be run with `python -m experiments.basic_comparison`
     main()
