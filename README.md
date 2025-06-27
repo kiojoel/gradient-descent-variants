@@ -48,6 +48,12 @@ This will:
 
 Contour plots showing optimization paths of each optimizer across loss landscapes like Quadratic and Rosenbrock.
 
+![Quadratic Comparison](results/plots/Quadratic_comparison.png)
+
+You can also compare on non-convex functions like Rosenbrock:
+
+![Rosenbrock Comparison](results/plots/Rosenbrock_comparison.png)
+
 ## Learning Objectives
 
 - Understand optimizer behavior on convex vs non-convex functions
