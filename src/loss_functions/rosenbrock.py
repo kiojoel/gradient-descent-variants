@@ -14,11 +14,11 @@ class Rosenbrock(BaseFunction):
     self.name = f"Rosenbrock (a={a}, b={b})"
     self.global_minimum = np.array([self.a, self.a**2])
 
-def evaluate(self, params: np.ndarray) -> float:
+  def evaluate(self, params: np.ndarray) -> float:
     x, y = params
     return (self.a - x)**2 + self.b * (y - x**2)**2
 
-def gradient(self, params: np.ndarray) -> np.ndarray:
+  def gradient(self, params: np.ndarray) -> np.ndarray:
     x, y = params
     grad_x = -2 * (self.a - x) - 4 * self.b * (y - x**2) * x
     grad_y = 2 * self.b * (y - x**2)
