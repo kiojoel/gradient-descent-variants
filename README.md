@@ -13,11 +13,6 @@ A clean and modular Python project that implements and compares optimization alg
 
 - Quadratic (Convex)
 - Rosenbrock (Non-convex)
-- Visualizations:
-
-- 2D Contour plots with optimizer paths
-- Log-scaled loss surface coloring
-- Modular code using base classes
 
 ## Installation
 
