@@ -46,13 +46,22 @@ This will:
 
 ## Example Output
 
-Contour plots showing optimization paths of each optimizer across loss landscapes like Quadratic and Rosenbrock.
+### Contour plots showing optimization paths of each optimizer across loss landscapes like Quadratic.
 
-![Quadratic Comparison](results/plots/Quadratic_comparison.png)
+![Quadratic Comparison](results/plots/Quadratic_contour.png)
 
 You can also compare on non-convex functions like Rosenbrock:
 
-![Rosenbrock Comparison](results/plots/Rosenbrock_comparison.png)
+![Rosenbrock Comparison](results/plots/Rosenbrock_contour.png)
+
+### Convergence plots show the loss value at each iteration
+
+On the Quadratic function:
+![Quadratic Comparison](results/plots/Quadratic_convergence.png)
+
+On the Rosenbrock function:
+
+![Rosenbrock Comparison](results/plots/Rosenbrock_convergence.png)
 
 ## Learning Objectives
 

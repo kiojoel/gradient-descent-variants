@@ -4,6 +4,7 @@ from src.loss_functions import Rosenbrock, Quadratic
 from src.optimizers import SGD, Adam, RMSprop
 from src.utils.experiment_runner import run_optimization
 from src.visualization.contour_plots import plot_contour
+from src.visualization.convergence_plots import plot_convergence
 
 def main():
     """
@@ -11,7 +12,8 @@ def main():
     """
     # Experiment Configuration
     # Choose loss function: Rosenbrock() or Quadratic()
-    loss_function = Quadratic()
+    #loss_function = Quadratic()
+    loss_function = Rosenbrock()
 
     # Common settings
     start_point = np.array([-1.5, -1.0])
@@ -39,25 +41,36 @@ def main():
         histories[name] = history
 
     #  Visualize Results
-    plot_title = f"Optimizer Comparison on {loss_function.name}"
+    plot_dir = "results/plots"
+    os.makedirs(plot_dir, exist_ok=True)
 
-    # Define plot ranges based on the function
+    # Generate and save contour plot
+    contour_title = f"Optimizer Comparison on {loss_function.name}"
+    contour_save_path = os.path.join(plot_dir, f"{loss_function.__class__.__name__}_contour.png")
+
+
     if isinstance(loss_function, Rosenbrock):
         x_range, y_range = (-2, 2), (-1, 3)
     else: # Quadratic
         x_range, y_range = (-6, 6), (-6, 6)
-
-    # Create results directory if it doesn't exist
-    os.makedirs("results/plots", exist_ok=True)
-    save_path = f"results/plots/{loss_function.__class__.__name__}_comparison.png"
 
     plot_contour(
         loss_function=loss_function,
         histories=histories,
         x_range=x_range,
         y_range=y_range,
-        title=plot_title,
-        save_path=save_path
+        title=contour_title,
+        save_path=contour_save_path
+    )
+
+    convergence_title = f"Optimizer Comparison on {loss_function.name}"
+    convergence_save_path = os.path.join(plot_dir, f"{loss_function.__class__.__name__}_convergence.png")
+
+    plot_convergence(
+        loss_function=loss_function,
+        histories=histories,
+        title=convergence_title,
+        save_path=convergence_save_path
     )
 
 if __name__ == "__main__":
