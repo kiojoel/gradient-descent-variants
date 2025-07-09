@@ -1,69 +1,37 @@
 # Gradient Descent Variants
 
-A clean and modular Python project that implements and compares optimization algorithms: **SGD**, **Adam**, and **RMSprop**. The project explores how each optimizer behaves on different types of loss landscapes using visualizations.
+A Python project that implements and compares optimization algorithms: **SGD**, **Adam**, and **RMSprop**. The project explores how each optimizer behaves on different types of loss landscapes using visualizations.
 
 ## Features
 
 - Custom implementation of:
-
-- Stochastic Gradient Descent (SGD)
-- RMSprop
-- Adam
+  - Stochastic Gradient Descent (SGD)
+  - RMSprop
+  - Adam
 - Optimization over test functions:
-
-- Quadratic (Convex)
-- Rosenbrock (Non-convex)
+  - Quadratic (Convex)
+  - Rosenbrock (Non-convex)
+- Visualization including 2D contour, 3D surface, and convergence plots.
 
 ## Installation
 
-```bash
-git clone https://github.com/yourusername/gradient-descent-variants.git
-cd gradient-descent-variants
-pip install -e .
-```
+1.  **Clone the repository:**
 
-Or install dependencies:
+    ```bash
+    git clone https://github.com/your-username/gradient-descent-variants.git
+    cd gradient-descent-variants
+    ```
 
-```bash
-pip install -r requirements.txt
-```
+2.  **Install the project and its dependencies:**
+    _(This command uses the `setup.py` file to install everything needed.)_
+    ```bash
+    pip install -e .
+    ```
 
 ## Run an Experiment
+
+To run a pre-configured comparison and generate all plots:
 
 ```bash
 python -m experiments.basic_comparison
 ```
-
-This will:
-
-- Run all optimizers on the selected loss function
-- Save the comparison plot to `results/plots/`
-
-## Example Output
-
-### Contour plots showing optimization paths of each optimizer across loss landscapes like Quadratic.
-
-![Quadratic Comparison](results/plots/Quadratic_contour.png)
-
-You can also compare on non-convex functions like Rosenbrock:
-
-![Rosenbrock Comparison](results/plots/Rosenbrock_contour.png)
-
-### Convergence plots show the loss value at each iteration
-
-On the Quadratic function:
-![Quadratic Comparison](results/plots/Quadratic_convergence.png)
-
-On the Rosenbrock function:
-
-![Rosenbrock Comparison](results/plots/Rosenbrock_convergence.png)
-
-## Learning Objectives
-
-- Understand optimizer behavior on convex vs non-convex functions
-- Practice implementing optimization algorithms from scratch
-- Build modular and extensible ML codebases
-
-## License
-
-MIT License

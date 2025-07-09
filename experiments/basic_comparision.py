@@ -3,8 +3,7 @@ import os
 from src.loss_functions import Rosenbrock, Quadratic
 from src.optimizers import SGD, Adam, RMSprop
 from src.utils.experiment_runner import run_optimization
-from src.visualization.contour_plots import plot_contour
-from src.visualization.convergence_plots import plot_convergence
+from src.visualization import plot_contour, plot_surface, plot_convergence
 
 def main():
     """
@@ -72,6 +71,11 @@ def main():
         title=convergence_title,
         save_path=convergence_save_path
     )
+
+    if isinstance(loss_function, Rosenbrock):
+        plot_surface(loss_function, histories, x_range, y_range,
+                     f"3D View of Optimization on {loss_function.name}",
+                     os.path.join(plot_dir, f"{loss_function.__class__.__name__}_surface.png"))
 
 if __name__ == "__main__":
     main()
